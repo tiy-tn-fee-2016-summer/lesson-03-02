@@ -57,9 +57,13 @@ test('it can find the min', (assert) => {
 
 // rewrite this using a for loop
 function numberOfPeople(familyArray) {
-  console.log(familyArray);
+  let number = 0;
 
-  return familyArray.length;
+  for (let i = 0; familyArray[i] !== undefined; i++) {
+    number = i + 1;
+  }
+
+  return number;
 }
 
 
@@ -115,12 +119,25 @@ test('families can have babies', (assert) => {
 // "start" and "end"
 // Return an array of numbers from "start" to "end" including
 // these values!
+function range(start, end) {
+  const newVariable = [];
+
+  for (let i = start; i <= end; i++) {
+    newVariable.push(i);
+  }
+
+  return newVariable;
+}
 
 test('a student knows how to use for loops', (assert) => {
   assert.deepEqual(range(0, 0), [0]);
   assert.deepEqual(range(0, 1), [0, 1]);
   assert.deepEqual(range(5, 10), [5, 6, 7, 8, 9, 10]);
 });
+
+const isKid = function (person) {
+  return person.age <= 17;
+};
 
 // Create a function isKid that takes one argument "person"
 // and returns a boolean value based on that person's "age"
@@ -147,6 +164,19 @@ test('knows if a person is a kid', (assert) => {
 // Create a function "onlyKids" that takes an array of "familyMembers"
 // Return a DIFFERENT ARRAY that contains only the people that are kids
 // See above for figuring out who is considered a kid
+
+function onlyKids(familyMembers) {
+  var newArr = [];
+
+  for (var i = 0; i < familyMembers.length; i++) {
+    var person = familyMembers[i];
+    if (isKid(person)) {
+      newArr.push(person);
+    }
+  }
+
+  return newArr;
+}
 
 test('can find who should be in school', (assert) => {
   assert.deepEqual(onlyKids(simpsons), [
