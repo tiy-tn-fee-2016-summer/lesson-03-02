@@ -178,6 +178,14 @@ function onlyKids(familyMembers) {
   return newArr;
 }
 
+const onlyKids2 = function(familyMembers) {
+
+};
+
+const onlyKids3 = (familyMembers) => {
+
+};
+
 test('can find who should be in school', (assert) => {
   assert.deepEqual(onlyKids(simpsons), [
     {
